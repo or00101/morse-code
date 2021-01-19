@@ -78,6 +78,25 @@ def is_morse(string):
 			return False
 	return True
 
+def translate_input(ascii_dict, morse_dict, inpt):
+
+	if inpt == "-H" or inpt == "-h" :
+		print_help()
+
+	elif inpt == "-T" or inpt == "-t":
+		print_morse_table(morse_dict)
+	
+	elif is_text(inpt):
+		print(text2morse(ascii_dict, inpt))
+	
+	elif is_morse(inpt):
+		morse_input = get_list_from_input(inpt)
+		print(morse2text(morse_dict, morse_input))
+
+	else:
+		print("error, please enter morse, text, '-t' or '-q'.")
+
+
 def main(ascii_dict, morse_dict):
 	print("Welcome to the Morse-Translator.")
 	print("Type '-h' for help.\n")
@@ -87,23 +106,13 @@ def main(ascii_dict, morse_dict):
 		if inpt == "-Q":
 			break
 
-		elif inpt == "-H":
-			print_help()
-
-		elif inpt == "-T":
-			print_morse_table(morse_dict)
-		
-		elif is_text(inpt):
-			print(text2morse(ascii_dict, inpt))
-		
-		elif is_morse(inpt):
-			morse_input = get_list_from_input(inpt)
-			print(morse2text(morse_dict, morse_input))
-
-		else:
-			print('error, please enter morse, text, t or q.')
+		translate_input(ascii_dict, morse_dict, inpt)
 
 if __name__ == '__main__':
 	ascii_dict = get_ascii_dict()
 	morse_dict = get_morse_dict(ascii_dict)
-	main(ascii_dict, morse_dict)
+	
+	if len(sys.argv) < 2:
+		main(ascii_dict, morse_dict)
+	else:
+		translate_input(ascii_dict, morse_dict, sys.argv[1])
