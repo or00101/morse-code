@@ -1,4 +1,5 @@
 import xml.etree.ElementTree as ET
+import sys
 
 def print_help():
 	print()
@@ -8,8 +9,13 @@ def print_help():
 	print("Type your text to convert to morse, " + \
 		"or morse to convert to text.\n")
 
+def get_path_to_xml_file(file_name):
+	path = sys.argv[0]
+	truncate = path.index('morse_xlator.py')
+	return path[:truncate] + file_name
+
 def get_ascii_dict():
-	tree = ET.parse('morse.xml')
+	tree = ET.parse(get_path_to_xml_file('morse.xml'))
 	morsexml = tree.getroot()
 	morse_table = list(morsexml)
 
