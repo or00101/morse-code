@@ -55,9 +55,7 @@ def morse2text(morse_dict, morse_input):
 		elif code in morse_dict:
 			res += morse_dict[code]
 		else:
-			res = ""
-			print(f"Error: {code} is not morse.")
-			break
+			res += "#" * len(code)
 	return res
 
 def text2morse(ascii_dict, text_input):
