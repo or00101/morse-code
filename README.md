@@ -4,7 +4,7 @@ When you run this script you can type text to be translated to morse code, or mo
 for example when you type:
 > \- .... . / --.- ..- .. -.-. -.- / -... .-. --- .-- -. / ..-. --- -.-
 
-will return: `THE QUICK BROWN FOX`(notice '/' represent a space)
+will return: `THE QUICK BROWN FOX` (notice '/' represent a space)
 
 on the other hand if you type:
 > hello world
