@@ -4,13 +4,12 @@ When you run this script you can type text to be translated to morse code, or mo
 for example when you type:
 > \- .... . / --.- ..- .. -.-. -.- / -... .-. --- .-- -. / ..-. --- -.-
 
-will return: THE QUICK BROWN FOX
-(notice '/' represent spaces)
+will return: `THE QUICK BROWN FOX`(notice '/' represent a space)
 
 on the other hand if you type:
 > hello world
 
-you'll get back: .... . .-.. .-.. --- / .-- --- .-. .-.. -..
+you'll get back: `.... . .-.. .-.. --- / .-- --- .-. .-.. -..`
 
 For help type:
 > -h
@@ -20,5 +19,3 @@ If you want to see the entire morse code table, type:
 
 If you want to quit the program type:
 > -q
-
-
