@@ -3,9 +3,9 @@ import xml.etree.ElementTree as ET
 def print_help():
 	print()
 	print("---- HELP ----")
-	print("Enter 't' to see the morse table.")
-	print("Enter 'q' to quit.")
-	print("type your text to convert to morse, " + \
+	print("Enter '-t' to see the morse table.")
+	print("Enter '-q' to quit.")
+	print("Type your text to convert to morse, " + \
 		"or morse to convert to text.\n")
 
 def get_ascii_dict():
@@ -72,17 +72,17 @@ def is_morse(string):
 
 def main(ascii_dict, morse_dict):
 	print("Welcome to the Morse-Translator.")
-	print("type 'help' for help.\n")
+	print("Type '-h' for help.\n")
 	while True:
-		inpt = input("Input: ")
+		inpt = input("Input: ").upper()
 
-		if inpt == "q":
+		if inpt == "-Q":
 			break
 
-		elif inpt == "help":
+		elif inpt == "-H":
 			print_help()
 
-		elif inpt == "t":
+		elif inpt == "-T":
 			print_morse_table(morse_dict)
 		
 		elif is_text(inpt):
